@@ -1,0 +1,351 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+
+if ( ! function_exists('is_logged_in'))
+{
+	function is_logged_in() {
+	
+	    $CI =& get_instance();
+	    $user = $CI->session->userdata('vkt_clientUser');
+		if($user){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+
+if ( ! function_exists('vkt_checkAuth'))
+{
+	function vkt_checkAuth() {
+	    $CI =& get_instance();
+	    $user = $CI->session->userdata('vkt_clientUser');
+		if(!$user){
+			$CI->load->helper('url');
+			redirect(site_url('login'));
+		}else{
+			return true;
+		}
+	}
+}
+
+if ( ! function_exists('vst_textDate'))
+{
+	function vst_textDate() {
+		$currentUser=vst_getCurrentUser();
+		$txt = $currentUser['username'].' ['.date("d/m/Y H:i:s").']';
+		return $txt;
+	}
+}
+
+
+if ( ! function_exists('vst_getCurrentUser'))
+{
+	function vst_getCurrentUser() {
+	    $CI =& get_instance();
+	    $user = $CI->session->userdata('vkt_clientUser');
+		return $user;
+	}
+}
+
+if ( ! function_exists('vst_currentDate'))
+{
+	function vst_currentDate($time=true) {
+		if($time){
+			$dateTime=date("d-m-Y H:i:s");
+		}else{
+			$dateTime=date("d-m-Y");
+		}
+		return $dateTime;
+	}
+}
+
+if ( ! function_exists('starts_with'))
+{
+	function starts_with($haystack, $needle)
+	{
+		return substr($haystack, 0, strlen($needle))===$needle;
+	}
+}
+
+if ( ! function_exists('vst_getIPAddress'))
+{
+	function vst_getIPAddress() {
+		return $_SERVER['REMOTE_ADDR'];;
+	}
+}
+
+
+if(!function_exists('message_flash')){
+	function message_flash($message = '', $type = 'success'){
+		$CI =& get_instance();
+		$CI->session->set_flashdata('message_flashdata', array(
+			'type' => $type,
+			'message' => $message
+		));
+	}
+}
+
+if(!function_exists('vst_password')){
+	function vst_password($msg){
+		return md5($msg);
+	}
+}
+
+if(!function_exists('vst_pagination')){
+	function vst_Pagination(){
+		$config['full_tag_open'] = '<ul class="pagination">';
+		$config['full_tag_close'] = '</ul>';
+		$config['first_link'] = '&laquo; ';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+		$config['last_link'] = ' &raquo;';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+		$config['next_link'] = 'Trang sau &raquo;';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+		$config['prev_link'] = '&laquo; Trang trước';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a>';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li>';
+        $config['per_page'] =10;
+        $config['page_query_string'] =true;
+        $config['query_string_segment'] ="page";
+		$config['base_url'] =vst_currentUrl();
+		return $config;
+	}
+}
+
+if(!function_exists('vst_showPrice')){
+	function vst_showPrice($price)
+	{
+	  return number_format($price);
+	}
+}
+
+if ( ! function_exists('getStoreText'))
+{
+	function getStoreText($store)
+	{
+		if($store =='1'){
+			return "<span class='bold black'>Kho SG</span>";
+		}else if($store =="0"){
+			return "<span class='bold green'>Kho HN</span>";
+		}else{
+			return "<span class='bold red'>N/A</span";
+		}
+	}
+}
+
+if(!function_exists('vst_currentUrl')){
+	function vst_currentUrl($withoutPage=true)
+	{
+		$CI =& get_instance();
+		$url = $CI->config->site_url($CI->uri->uri_string());
+		$params=$CI->input->get();
+		if(isset($params['page']) && $withoutPage)
+			unset($params['page']);
+		$http_query=http_build_query($params, '', "&");
+		return $http_query ? $url.'?'.$http_query : $url;
+	}
+}
+
+
+if(!function_exists('vst_filterData')){
+	function vst_filterData($likeFields=array(),$whereFieldsDate=array(),$tablealias=array())
+	{
+		$CI =& get_instance();
+		$params= $CI->input->get();
+		//print_r($params);
+		unset($params['page']);
+		$filterData= array();
+		if($params){
+			foreach($params as $key=>$value){
+				if($value!=''){
+					$table_alias="";
+					if(isset($tablealias[str_replace('filter_','',$key)]))
+					{
+						$table_alias= $tablealias[str_replace('filter_','',$key)];
+					}
+					if(in_array($key,$likeFields))
+					{	
+						$filterData[str_replace('filter_','',$key)]= array('value'=>trim($value),'condition'=>'like','tbalias'=>$table_alias);
+					}
+					elseif(in_array($key,$whereFieldsDate))
+					{
+						$filterData[str_replace('filter_','',$key)]= array('value'=>trim($value),'condition'=>'date','tbalias'=>$table_alias);
+					}
+					else
+					{
+						$filterData[str_replace('filter_','',$key)]= array('value'=>trim($value),'condition'=>'where','tbalias'=>$table_alias);
+					}
+				}
+			}
+		}
+		return $filterData;
+		
+	}
+}
+
+
+if(!function_exists('vst_getData')){
+	function vst_postData()
+	{
+		$CI =& get_instance();
+		$params=$CI->input->post();
+		$filterData=array();
+		if($params){
+			foreach($params as $key=>$value){
+				if( $key!='save' && $key!='update' && $value!='' && $key!='updatepass'){
+					$filterData[$key]  = $value;
+				}
+			}
+		}
+		return $filterData;
+	}
+}
+
+if(!function_exists('vst_buildFilter')){
+	function vst_buildFilter($filter)
+	{
+		$CI =& get_instance();
+		if($filter){
+			foreach ($filter as $key => $value) {
+				if(!empty($value['tbalias']))
+					{
+						$key=$value['tbalias'].".".$key;
+					}
+                switch ($value['condition']) {
+					
+                   case 'like':
+                        $query = $CI->db->like(array($key=>$value['value']));
+                        break;
+                   case 'where':
+                       $query = $CI->db->where(array($key=>$value['value']));
+                       break;
+                   case 'date':
+                   		if (strpos($key, 'startdate_') !== false) {
+                   			$key=str_replace("startdate_","",$key);
+                   			$query = $CI->db->where( $key.' >=',$value['value'] );
+                   		}else if (strpos($key, 'enddate_') !== false) {
+						  	$key=str_replace("enddate_","",$key);
+							$query = $CI->db->where( $key.' <=',$value['value'] );
+						}else{
+							$query = $CI->db->where( $key.' ==',$value['value'] );
+						}
+                      
+                   	   break;
+					case 'where_in':
+						$CI->db->where_in ($key,$value['value']);
+						break;
+					case 'where_not_in':
+						$CI->db->where_not_in($key,$value['value']);
+						break;
+                   default:
+                       $query = $CI->db->where(array($key=>$value['value']));
+                       break;
+                     break;
+               }
+            }
+		}
+	}
+}
+
+
+if(!function_exists('vst_convertCartString')){
+function vst_convertCartString($string)
+	{
+		$search = array("\'",'\"',"'",'"');
+		$replace = array("?","?","?",'?');
+
+		return str_replace($search, $replace, $string);
+
+	}
+}
+
+if(!function_exists('get_setting_meta')){
+function get_setting_meta($meta_key,$return_row=false)
+	{
+		$CI =& get_instance();
+		$setting_table="settings";
+		$CI->db->select("*");
+		$CI->db->from($setting_table);
+		$CI->db->where(array('meta_key'=>$meta_key));
+		$query=$CI->db->get();
+		$row=$query->row_array();
+		if($row){
+			if($return_row)
+				return $row;
+			return $row['meta_value'];
+		}else{
+			return false;
+		}
+	}
+}
+
+if ( ! function_exists('getStatusOrder'))
+{
+	function getStatusOrder($status)
+	{
+		$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
+		switch($status)
+		{
+			case -1:
+				$statusText="<span class='dahuy'>Đã hủy</span>";
+				break;
+			case 0:
+				$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
+				break;
+			case 1:
+				$statusText="<span class='daduyet'>Đã duyệt</span>";
+				break;
+			case 2:
+				$statusText="<span class='dathanhtoan'>Đã thanh toán - chờ mua hàng</span>";
+				break;
+			case 3:
+				$statusText="<span class='damuahang'>Đã mua hàng</span>";
+				break;
+			case 4:
+				$statusText="<span class='hangdave'>Hàng đã về - chờ giao hàng</span>";
+				break;
+			case 5:
+				$statusText="<span class='daketthuc'>Đã kết thúc</span>";
+				break;
+			default:
+				$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
+		}
+		return $statusText;
+	}
+}
+
+if ( ! function_exists('get_is_complain'))
+{
+	function get_is_complain($is_complain)
+	{
+		switch($is_complain)
+		{
+			case 0:
+				$status="<span class='black'>Không có khiếu nại</span>";
+				break;
+			case 1:
+				$status="<span class=''>Đang khiếu nại</span>";
+				break;
+			case 2:
+				$status="<span class='blue'>Khiếu nại thành công</span>";
+				break;
+			case 3:
+				$status="<span class='red'>Khiếu nại thất bại</span>";
+				break;
+			case 4:
+				$status="<span class='black'>Khiếu nại đã hủy</span>";
+				break;
+		}
+		return $status;
+	}
+}
+

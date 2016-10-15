@@ -1,0 +1,81 @@
+/* loading*/
+body > .overlay-loading {
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body > .overlay-loading > .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -15px;
+    color: #dd4b39;
+    font-size: 30px;
+}
+
+/*form checkout*/
+.form-mini-checkout {
+    margin-top: 15px;
+}
+
+.form-mini-checkout ul {
+    list-style: none;
+    max-width: 240px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.form-mini-checkout ul li {
+    min-width: 60px;
+    float: left;
+    text-align: right;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.form-mini-wallet-checkout .form-group > label {
+    float: none;
+    width: auto;
+}
+
+.form-mini-wallet-checkout .form-group > .form-control {
+    float: none;
+    width: 100%;
+}
+
+.text-price {
+    color: #C00;
+}
+.notify-listing{
+    padding: 5px;
+}
+
+.notify-listing.unread {
+    background: #f4f4f4;
+    border-bottom: solid 1px #f1f1f1;
+}
+
+.notify-listing .i-notify {
+    white-space: normal !important;
+    font-size: 11px;
+    max-height: 55px ;
+    padding-left: 15px !important;
+    position: relative;
+    min-height: 20px;
+
+}
+
+.notify-listing .i-notify i {
+    position: absolute;
+    left: 5px;
+    font-size: 15px;
+}

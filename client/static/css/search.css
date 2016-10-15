@@ -1,0 +1,196 @@
+/*.content-page{*/
+/*background-color: #fff !important;*/
+/*}*/
+.search-index > .filter{
+    display: inline-block;
+    width: 100%;
+    margin: 15px 0 0;
+    background-color: #fff;
+}
+.search-index > .filter > .table{
+    border: 1px #ddd solid;
+}
+.search-index > .filter > .table:last-child{
+    margin-bottom: 0;
+}
+.search-index h1{
+    /*margin:0;*/
+    padding:0;
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: bold;
+}
+.filter-content{
+    padding: 5px !important;
+}
+.filter-items a{
+    display: inline-block;
+    float: left;
+    margin: 2px;
+    color: #222;
+    border: 1px transparent solid;
+    padding: 2px 7px;
+}
+.filter-items a > span{
+    color: #e85242;
+}
+.filter-items.content-collapse{
+    height: 25px;
+    overflow: hidden;
+}
+.filter-items a:hover,
+.filter-items a.selected{
+    background-color: #f7f7f7;
+    border-color: #ddd;
+}
+.filter-items.content-expand{
+    height: auto;
+}
+.filter-head{
+    width: 80px;
+    /*border-right: 1px #ddd solid;*/
+    vertical-align: middle !important;
+    background-color: white;
+    color: #8d8d8d;
+}
+.filter-toggle{
+    font-size: 16px;
+}
+.filter-toggle.is-close{
+    color: #888;
+}
+.filter-toggle.is-open{
+    color: #e85242;
+}
+.pagination{
+    margin-top: 0;
+}
+.search-all-tags{
+    background-color: #fff;
+    border: #ccc 1px solid;
+    margin: 20px auto;
+    width: 80%;
+}
+table.search-all-tags > tbody > tr > td{
+    border: 0px;
+    padding: 8px 10px;
+}
+table.search-all-tags > tbody > tr > td > h3{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+table.search-all-tags > tbody > tr > td > h3 a:hover{
+    color: #c40000;
+}
+.search-index .filter .table{
+    margin-bottom: 10px;
+}
+.search-category-filter{
+    border: 1px solid #ddd;
+    border-bottom: 0px;
+}
+.search-category-filter .filter-list{
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    position: relative;
+}
+.search-category-filter .filter-list .filter-left{
+    width: 123px;
+    color: #595959;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 0 0 8px;
+    position: relative;
+}
+.search-category-filter .filter-list .filter-right{
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    margin-left: 85px;
+    overflow: hidden;
+    padding: 0px 30px 0px 0;
+    height: 33px;
+    position: relative;
+}
+.search-category-filter .filter-list .filter-right.show-all{
+    height: auto;
+}
+
+.search-category-filter .filter-list .filter-right ul{
+    padding-bottom: 5px;
+}
+.search-category-filter .filter-list .filter-right ul li{
+    background: #f2f2f2 none repeat scroll 0 0;
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 11px;
+    height: 22px;
+    line-height: 21px;
+    margin-left: 10px;
+    margin-top: 6px;
+    outline: 1px solid #fff;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.search-category-filter .filter-list .filter-right ul li:hover,
+.search-category-filter .filter-list .filter-right ul li.active{
+    border-color: #c40000;
+}
+.search-category-filter .filter-list .filter-right ul li a{
+    color: #333;
+    display: block;
+}
+.search-category-filter .filter-list .filter-right ul li a span{
+    display: block;
+    min-width: 30px;
+    padding: 0 10px;
+}
+.search-category-filter .filter-list .filter-right ul li a img{
+    height: 20px;
+    min-width: 30px;
+    width: 100%;
+    float: left;
+}
+.search-category-filter .filter-list .filter-right ul li a span:before{
+}
+.search-category-filter .filter-list .filter-right a.view-more{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+}
+.search-category-filter .filter-list .filter-right a.view-more i.fa.fa-caret-down{
+    color: #aaa;
+}
+.search-category-filter .filter-list .filter-right a.view-more:hover i.fa.fa-caret-down{
+    color: #4585f4;
+}
+.search-category-filter .filter-list .filter-right ul li i{
+    background-color: #e5101d;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: bold;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+    right: -5px;
+    text-align: center;
+    top: -5px;
+    width: 14px;
+    z-index: 1;
+    display: none;
+}
+.search-category-filter .filter-list .filter-right ul li.active i{
+    display: block;
+}

@@ -1,0 +1,358 @@
+/*page orders */
+.my-account-orders{
+    float: left;
+    width: 100%;
+    margin: 10px 0px;
+}
+.heading-page{
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 0px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #F3F5F7;
+
+}
+.list-view .item-view{
+
+}
+.item-view .order-item{
+    float: left;
+    width: 100%;
+    border:1px solid #cae1fe;
+    margin-bottom: 15px;
+}
+.item-view .order-item .button-checkout{
+    margin: 0 10px 10px 0;
+}
+
+.item-view .item-header{
+    border-bottom: 1px solid #cae1fe;
+    background: #e8f2ff;
+    height: 32px;
+    overflow: hidden;
+    line-height: 32px;
+    padding: 0px 10px;
+    color: #666;
+
+}
+.item-view .order-id{
+    color: #C00;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.item-view .order-time-created{
+    text-space: 1.5;
+    margin-right: 20px;
+}
+.item-view .shop-name{
+    margin-right: 20px;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+.item-view .item-middle{
+
+}
+.item-view .item-middle .full-width{
+    width: 100%;
+}
+.item-view .item-middle .order-detail{
+    font-size: 12px;
+}
+.item-view .item-middle .order-detail th{
+    background: #f7f7f7 none repeat scroll 0 0;
+    padding: 12px 0;
+    text-align: center;
+}
+.item-view .item-middle .order-detail tr{
+    border-bottom: 1px solid #ddd;
+}
+.item-view .item-middle .order-detail tr td{
+    text-align: center;
+    border-right: solid 1px #ddd;
+    min-height: 40px;
+    padding: 10px 5px;
+}
+
+.item-view .order-detail td .thumbs-product-image{
+    width: 58px;
+    height: 58px;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    border:solid 1px #ddd;
+    padding: 1px;
+
+}
+.item-view .order-detail td img{
+    max-width: 100%;
+}
+
+.item-view .order-detail .oder-detail-product-info{
+    text-align: left !important;
+    font-size: 13px;
+}
+.item-view .order-detail .oder-detail-product-info .sku-name{
+     margin-top: 5px;
+     width: 100%;
+ }
+.item-view .order-detail .order-detail-image{
+    width: 80px;
+}
+.item-view .order-detail .oder-detail-product-info{
+    width: 300px;;
+}
+.text-price{
+    color: #C00;
+}
+.item-view .order-item-footer ul, .order-item-footer ul{
+    max-width: 240px;
+    margin-top:15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.item-view .order-item-footer ul li,.order-item-footer ul li{
+    width: 120px;
+    float: left;
+    text-align: right;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+.text-bold {
+    font-weight: bold;
+}
+.item-view .order-item-footer ul li .final-price,.order-item-footer ul li .final-price{
+    font-size: 15px;
+}
+.order-item-footer ul{padding:0;}
+.order-item-footer ul li{list-style:none;}
+
+.box-search-order, .box-search{
+    float: left;
+    width: 100%;
+}
+.box-search-order .form-group{
+    margin-bottom: 0px;
+}
+.box-search-order .form-group,
+.box-search .form-group
+{
+    float: left;
+    max-width: 300px;
+    margin-right: 10px;
+}
+.box-search-order .form-group input,.box-search-order .form-group select,
+.box-search .form-group input,.box-search .form-group select
+{
+    width: 120px;
+}
+.form-group .filter-date input{
+    width: 100px;
+}
+.box-search-order .searching,
+.box-search .searching
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Style Wallet */
+.tab-primary .nav-tabs > li.active > a, .tab-primary .nav-tabs > li.active > a:focus, .tab-primary .nav-tabs > li.active > a:hover {
+    color: #c40000;
+    font-weight: bold;
+}
+.tab-primary .nav-tabs > li > a {
+    color: #333;
+    margin-left: 5px;
+}
+.tab-primary .nav.nav-tabs{
+    margin-bottom: 10px;
+}
+.form-control#transactionsearch-status{
+    width: 150px;
+}
+/*============================ Withdraw note Create
+===================================================*/
+.form-horizontal .input-group[class*="col-"] {
+    float: left;
+}
+
+.form-create-wallet-bank label.control-label {
+    width: 25%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: right;
+}
+
+.form-create-wallet-bank input.form-control, .form-create-wallet-bank textarea.form-control, .form-create-wallet-bank select.form-control {
+    width: 50%;
+    float: left;
+}
+
+.form-create-wallet-bank textarea.form-control {
+    min-height: 80px;
+}
+
+.form-create-wallet-bank input.money-bank, .form-create-wallet-bank input.money-bank {
+    width: 100%;
+}
+
+.form-create-wallet-bank input.cash-cmtnd {
+    width: 100%;
+}
+
+.form-create-wallet-bank .field-createwithdrawnotecashform-id_card_issue_date,
+.form-create-wallet-bank .field-createwithdrawnotecashform-id_card{
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+    margin-left: 0;
+    margin-bottom: 0px;
+}
+.form-create-wallet-bank .field-createwithdrawnotecashform-id_card p.help-block{
+    width: 100%;
+}
+
+.form-create-wallet-bank .field-createwithdrawnotecashform-id_card_issue_date .form-control {
+    width: 100%;
+}
+
+.form-create-wallet-bank select#CreateWithdrawNoteCashForm-id_card_issued_by {
+    width: 34%;
+}
+
+.form-create-wallet-bank select#CreateWithdrawNoteBankForm-bank_province_id {
+    width: 45%;
+    margin-left: 5%;
+}
+
+.form-create-wallet-bank p.help-block {
+    width: 25%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.form-control.money-bank{
+    z-index: 1
+}
+
+.recipient label {
+    font-size: 12px;
+}
+.product-wrap {
+    padding-top: 20px;
+    font-size: 12px;
+}
+.product-wrap p {
+    margin-bottom: 5px;
+}
+.shop-info {
+    margin-bottom: 10px;
+}
+.img-thumb {
+    float: left;
+    width: 80px;
+    margin-right: 10px;
+    padding: 2px;
+    border: 1px solid #eee;
+}
+.img-thumb img {
+    max-width: 100%;
+    height: auto;
+}
+.payment-method {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.payment-method > li {
+    border-top: 1px dotted #ccc;
+}
+.payment-method > li:first-child {
+    border-top: none;
+}
+.payment-method > li > a {
+    display: block;
+    padding: 8px 0;
+    color: #333;
+}
+/* style error*/
+.text-error h2 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #c40000;
+    margin-bottom: 20px;
+}
+.text-error .message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.text-error p {
+    color: #666;
+    margin: 5px;
+}
+.text-error p > a {
+    text-decoration: underline;
+}
+.text-error p > i{
+    margin-right: 5px;
+    color: #c40000;
+}
+.text-error p > b{
+    font-weight: bold;
+    color: #c40000;
+}
+
+/* box search */
+.box-search{
+    float: left;
+    width: 100%;
+}
+.box-search .form-group{
+    float: left;
+    max-width: 300px;
+    margin-right: 10px;
+}
+.box-search .form-group input{
+    width: 100px;
+    display: block;
+}
+.box-search .form-group select{
+    width: 120px;
+    display: block;
+}
+.box-search .control-label{
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+.box-search .searching{
+    margin-top: 21px;
+}
+.box-search .form-group-date{
+    width: 170px;
+}
+/* style */
+.e-wallet,
+.e-wallet .heading,
+.e-wallet .heading span {
+    display: block;	
+    font-size: 12px;
+}
+.e-wallet .heading:hover,
+.e-wallet .heading:focus {
+    text-decoration: none;
+    outline: none;
+}
+.e-wallet .heading strong {
+    font-size: 13px;
+}
+.e-wallet .panel-body .form-inline {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;	
+}

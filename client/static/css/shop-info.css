@@ -1,0 +1,411 @@
+.wrapper {
+    background: #ffffff !important;
+}
+
+.widget-shop-info {
+    margin-bottom: 15px;
+}
+
+.widget-shop-info > .content {
+    background-image: url("../../images/v2/shop/diamond-upholstery.jpg");
+    border: 1px #dddddd solid;
+    display: inline-block;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+
+.widget-shop-info > .content .info {
+    padding: 10px;
+}
+
+.widget-shop-info > .content > strong {
+    display: block;
+    border-bottom: 1px #ccc dotted;
+    padding: 0 0 4px 0;
+}
+
+.widget-shop-info > .content .btn-list {
+    margin-top: 68px;
+    height: 56px;
+}
+
+.widget-shop-info > .content .btn-list {
+    margin-top: 175px;
+    height: 56px;
+}
+
+.widget-shop-info > .content .btn-list .strong {
+    display: block;
+    border-bottom: 1px #ccc dotted;
+    margin-bottom: 7px;
+}
+
+.widget-shop-info > .content .btn-list a {
+    width: 170px;
+}
+
+.widget-shop-info .shop-name {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 12px;
+    position: relative;
+    padding-left: 15px;
+    /*line-height: 20px;*/
+    /*max-height: 40px;*/
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.brand-name {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: 0 10px 5px 10px;
+    border-bottom: 1px dotted #ccc;
+    color: #e74c3c;
+    line-height: 18px;
+    margin: 5px 0;
+}
+
+.brand-name .url-shop {
+    color: #c40000;
+}
+
+.brand-info {
+    padding: 10px;
+
+}
+
+.brand-info .desc {
+    margin-bottom: 5px;
+}
+
+.brand-info .desc span {
+    display: inline-block;
+    width: 62px;
+}
+
+.widget-shop-info > .content .btn-shop {
+    position: absolute;
+    bottom: 5px;
+    border-top: 1px dotted #ccc;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.widget-shop-info > .content .btn-shop a {
+    background-color: #c40000;
+    border: none;
+    border-radius: 0px;
+}
+
+.brand-info .desc .star-rating {
+    display: inline-block;
+}
+
+.widget-shop-info .shop-name > i {
+    color: #777777;
+    left: 0;
+    position: absolute;
+    top: 5px;
+}
+
+.widget-shop-info .list {
+    display: inline-block;
+    width: 100%;
+    padding-top: 5px;
+    float: left;
+}
+
+.widget-shop-info .list > span {
+    color: #888888;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    width: 60px;
+}
+
+/* Banner Shop Widget*/
+.shop-banner-widgets {
+    margin-bottom: 15px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-banner-widgets .page-site-width {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.shop-banner-widgets .shop-banner-info {
+    float: right;
+    background-color: #fff;
+    width: 250px;
+    box-shadow: #999 1px 1px 4px;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content {
+    padding: 20px;
+    color: #333;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .title-shop {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .list-info {
+    margin-top: 5px;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .list-info > div.left {
+    float: left;
+    width: 70px;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .list-info > a.btn {
+    display: block;
+    border-radius: 0;
+    text-align: center;
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    outline: none;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .list-info > a.btn > i {
+    margin-right: 3px;
+    font-size: 16px;
+}
+
+.shop-banner-widgets .shop-banner-info .shop-info-content .list-info > a.shop-info-phone {
+    font-size: 16px;
+    font-width: bold;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.shop-banner-widgets .slick-slide img {
+    display: inline-block;
+}
+
+.shop-banner-widgets .slick-slide {
+    text-align: center;
+    padding: 0;
+}
+
+.shop-banner-widgets .slick-slide.slick-current::before,
+.shop-banner-widgets .item-slide.selected::before,
+.shop-banner-widgets .slick-slide::before,
+.shop-banner-widgets .item-slide::before {
+    border: 0;
+}
+
+.shop-banner-widgets .slick-dots {
+    position: absolute;
+    bottom: 20px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.shop-banner-widgets .slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 5px;
+    padding: 0;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.shop-banner-widgets .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.shop-banner-widgets .slick-dots li.slick-active {
+    border: 1px solid #e74c3c;
+    background-color: #e74c3c;
+}
+
+.shop-call-phone {
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+/* style shop info v2*/
+
+.widget-shop-info-v2 {
+    margin-bottom: 15px;
+}
+
+.widget-shop-info-v2 > .content {
+    background-color: #e1f5fe;
+    border: 1px #b3e5fc solid;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.widget-shop-info-v2 > .content .info {
+    padding: 10px;
+}
+
+.widget-shop-info-v2 > .content > strong {
+    display: block;
+    border-bottom: 1px #ccc dotted;
+    padding: 0 0 4px 0;
+}
+
+.widget-shop-info-v2 > .content .btn-list {
+    margin-top: 68px;
+    height: 56px;
+}
+
+.widget-shop-info-v2 > .content .btn-list {
+    margin-top: 175px;
+    height: 56px;
+}
+
+.widget-shop-info-v2 > .content .btn-list .strong {
+    display: block;
+    border-bottom: 1px #ccc dotted;
+    margin-bottom: 7px;
+}
+
+.widget-shop-info > .content .btn-list a {
+    width: 170px;
+}
+
+.widget-shop-info-v2 .shop-name {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 12px;
+    position: relative;
+    padding-left: 15px;
+    /*line-height: 20px;*/
+    /*max-height: 40px;*/
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.widget-shop-info-v2 > .content .btn-shop {
+    border-top: 1px solid #b3e5fc;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+
+.widget-shop-info-v2 > .content .btn-shop a {
+    font-size: 12px;
+}
+
+.widget-shop-info-v2 > .content .btn-shop a.btn {
+    margin-right: 5px;
+}
+
+.widget-shop-info-v2 > .content .btn-shop a.shop-contact {
+    color: #337ab7;
+}
+
+.widget-shop-info-v2 > .content .btn-shop a.shop-contact > i {
+    margin-right: 3px;
+}
+
+.widget-shop-info-v2 .list {
+    display: inline-block;
+    width: 100%;
+    padding-top: 5px;
+    float: left;
+}
+
+.widget-shop-info-v2 .list > span {
+    color: #888888;
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    width: 60px;
+}
+
+.widget-shop-info-v2 .brand-name {
+    padding: 5px 10px 0 10px;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.widget-shop-info-v2 .shop-status {
+    padding: 0px 20px 5px 10px;
+    border-bottom: none;
+}
+
+.widget-shop-info-v2 .shop-status {
+    padding: 0px 10px;
+    border-bottom: none;
+}
+
+.widget-shop-info-v2 .shop-status > span {
+    margin-right: 3px;
+}
+
+.widget-shop-info-v2 .brand-name img {
+    margin-left: 3px;
+}
+
+.widget-shop-info-v2 .brand-name .url-shop {
+    color: #c40000;
+}
+
+.widget-shop-info-v2 .brand-info {
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+.widget-shop-info-v2 .brand-info .desc {
+    margin-bottom: 6px;
+}
+
+.widget-shop-info-v2 .brand-info .desc .star-rating {
+    display: inline-block;
+}
+
+.widget-shop-info-v2 .brand-info .desc span {
+    display: inline-block;
+    width: 62px;
+    color: #777;
+}
+
+.widget-shop-info-v2 .contact-shop {
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+.widget-shop-info-v2 .contact-shop a {
+    font-size: 12px;
+    display: block;
+}

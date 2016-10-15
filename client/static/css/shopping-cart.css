@@ -1,0 +1,199 @@
+.table{
+    margin-bottom: 0px;
+}
+.cart-content{
+    background-color: #fff;
+    padding: 15px;
+    margin: 20px 0;
+
+}
+.cart-product-img{
+    width: 70px;
+}
+.boder-shop-cart{
+    border: 2px #ddd solid;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+.boder-shop-cart .title-shop .bg-title{
+    padding-left: 9px;
+    display: inline-block;
+}
+.boder-shop-cart .title-shop .bg-dv{
+    display: inline-block;
+    margin-left: 20px;
+}
+.boder-shop-cart .title-shop .bg-dv div{
+    margin-left: 5px;
+    color: #0a0a0a;
+}
+.boder-shop-cart .title-shop .bg-dv .tooltips{
+    display: inline-block;
+}
+.boder-shop-cart .title-shop .bg-dv .tooltips-cod{
+    display: inline-block;
+}
+.boder-shop-cart .title-shop .bg-dv .tooltips-free{
+    display: inline-block;
+}
+.table-shopping-cart{
+    background-color: #fff;
+    /*border: 1px #ddd solid;*/
+}
+.table > thead > tr > th{
+    border-bottom: 0px ;
+}
+/*.table-shopping-cart td{*/
+    /*border-top-style: dotted !important;*/
+/*}*/
+.table >tbody .sku-items td{
+    border-top : 0px;
+    border-bottom: 1px solid #ddd;
+    color: #5d5d5d;
+    padding: 14px;
+}
+.logistic_company{
+    width: 180px;
+    height: 29px;
+    border-color: #ddd;
+    padding-left: 10px;
+}
+.bg-warning{
+    background: #f5f5f5;
+    color: #5d5d5d;
+}
+.title-shop{
+    color: #999999;
+}
+.p-info,
+.p-info > .f{
+    display: inline-block;
+    width: 100%;
+    padding: 3px 0;
+}
+.p-info > .f > .pfl{
+    display: inline-block;
+    float: left;
+    width: 65px;
+}
+.price-range > .f.disabled > span{
+    color: #A0A0A0;
+    text-decoration: line-through;
+}
+.btn-remove,
+.sku-subtota,.btn-summary{
+    color: #0a0a0a;
+}
+.btn-summary{
+    margin-left: 25px;
+}
+.cart-content > form:last-child > .table{
+    margin-bottom: 0;
+}
+.shopping-button-right{
+    width: 100%;
+    /*float: right;*/
+}
+.losers{
+    margin-top: 5px;
+}
+.losers .btn-losers{
+    font-size: 11px;
+    border-radius: 0px;
+}
+.losers .form-losers{
+    line-height: 25px;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+}
+.losers .text-losers{
+    line-height: 10px;
+    margin-top: 14px;
+}
+.shopping-total{
+    /*border-left: 1px solid #dddddd;*/
+    margin-left: 25px;
+    line-height: 25px;
+    position: absolute;
+    bottom: 15px;
+    right: 9px;
+}
+.shopping-total-cart{
+    /*float: right;*/
+    /*padding-right: 10px;*/
+    padding-bottom: 10px;
+    font-family: tahoma;
+}
+.table >tfoot > tr td.text-right{
+    position: relative;
+}
+.shopping-total-cart .cart-price{
+    color: #666;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.shopping-total-cart .cart-price > span{
+    color: #e74c3c;
+}
+.shopping-total-cart .cart-price > span.price{
+    font-size: 14px;
+    padding-left: 5px;
+}
+.shopping-total-cart .cart-price.price-total > span.price{
+    font-size: 16px;
+}
+.shopping-total-cart .shop-footer-space{
+    border-bottom: 1px dashed #666;
+    display: block;
+    float: right;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 99%;
+}
+.shopping-cart-index .property-image{float:left;}
+.shopping-cart-index .property-image a{display:block;height:40px;width:40px; margin-right:10px;}
+.shopping-cart-index .property-list{line-height:18px;}
+.shopping-cart-index .sku-price{font-weight:bold;}
+.shopping-cart-index .error-text{color:#ff0000;}
+
+.media-body .media-heading a{
+    color: #5d5d5d;
+}
+.protection{
+    border-right: 1px solid #dddddd;
+    padding-right: 36px;
+    margin-right: -38px;
+}
+.protection .protection-img{
+    vertical-align: top;
+}
+.protection .protection-text{
+    display: inline-block;
+}
+.shopping-total .order-amount {
+    float: right;
+    line-height: 2;
+    padding: 0px 0px 10px 30px;
+    width: 100%;
+    text-align: right;
+}
+
+.shopping-total .order-amount ul {
+    float: left;
+    width: 100%;
+    color: #999999;
+}
+
+.shopping-total .order-amount ul li {
+    float: left;
+    width: 50%;
+}
+.shopping-total .order-amount ul li.value span.price {
+    font-weight: bold;
+    font-size: 14px;
+    color: #e74c3c;
+}
+.shopping-total .order-amount ul li.value {
+    color: #e74c3c;
+}
