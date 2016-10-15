@@ -20,7 +20,10 @@ class Customer extends CI_Controller {
 		$customer = $this->session->userdata('vkt_clientCustomer');
 		$data['customer'] = $customer;
 		$data['template'] = 'customer/profile';
-		$this->load->view('layout/home', $data);
+		$content=$this->load->view('layout/ajax',$data,true);
+						//$content=$this->load->view('users/ajax_changepassword',$data,true);
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
 	}
 	// Change password
 	

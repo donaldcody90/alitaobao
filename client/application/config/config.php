@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 switch (ENVIRONMENT)
 {
 	case 'development':
-		$config['base_url'] = 'http://localhost/viettrung/client/';
+		$config['base_url'] = 'http://localhost/alitaobao/client/';
 		break;
 	case 'testing';
 		$config['base_url'] = '';
