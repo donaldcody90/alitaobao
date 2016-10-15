@@ -43,7 +43,7 @@ class Auth extends CI_Controller {
 		$this->load->view('layout/home', $data);
 	}
 	
-	public function register(){
+	public function register(){ 
 	
 		if(is_logged_in()){
 			redirect(site_url('customer/profile'));
