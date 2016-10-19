@@ -253,7 +253,7 @@
                   </p>
                 </div>
               </div>
-              <form id="frm-add-cart" action="" method="post">
+              <form id="frm-add-cart" action="<?php echo site_url('cart/addToCart');?>" method="post">
                 <input type="hidden" name="id" value="<?php echo $product['pid']; ?>">
                 <input type="hidden" name="pname" value="<?php echo $product['pname']; ?>">
                 <input type="hidden" name="pimage" value="<?php echo $product['pimage']; ?>">

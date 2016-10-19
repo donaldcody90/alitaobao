@@ -30,9 +30,9 @@ class Customer extends CI_Controller {
 	public function changepass(){
 		if (is_logged_in()) { 
 			$customer = vst_getCurrentUser();
-			$cusername  = $customer['cusername'];
+			$cusername  = $customer['username'];
 		}
-		$param_where = array('cusername'=>$cusername);
+		$param_where = array('username'=>$cusername);
 		if( $this->input->post('updatepass')){
 			
 			$this->form_validation->set_rules('currentpassword', 'Mật khẩu hiện tại', 'trim|required');

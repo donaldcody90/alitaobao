@@ -22,7 +22,7 @@ class Auth extends CI_Controller {
 		
 		if($this->input->post('login')){
 			$param_where = array(
-					'cusername'=>trim( $this->input->post('username') ),
+					'username'=>trim( $this->input->post('username') ),
 					'password'=>vst_password( $this->input->post('password') ),
 				);
 			
@@ -59,10 +59,10 @@ class Auth extends CI_Controller {
 			
 			if ($this->form_validation->run()){
 				$data = array(
-					'cusername' => trim($this->input->post("username")),
-					'cfullname' => trim($this->input->post("fullname")),
-					'cphone'    => trim($this->input->post("phone")),
-					'cemail'    => trim($this->input->post("email")),
+					'username' => trim($this->input->post("username")),
+					'fullname' => trim($this->input->post("fullname")),
+					'phone'    => trim($this->input->post("phone")),
+					'email'    => trim($this->input->post("email")),
 					'password' => vst_password($this->input->post("password")),
 					'create_date'	=> vst_currentDate($time=true,$formatDate="Y-m-d",$formatTime="H:i:s"),
 				);
