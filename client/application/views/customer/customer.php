@@ -5,7 +5,7 @@
             <div class="row">
               <div class="col-md-12">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a data-toggle="tab" href="#acc">Quản lý tài khoản</a></li>
+                  <li><a data-toggle="tab" href="#acc">Quản lý tài khoản</a></li>
                   <li><a data-toggle="tab" href="#buy">Quản lý mua hàng</a></li>
                   <li><a data-toggle="tab" href="#bank">Tài khoản trả trước</a></li>
                 </ul>
@@ -13,26 +13,42 @@
             </div>
           </div>
           <div class="profile clearfix">
-            <div id="#acc" class="tab-pane fade in active"> 
+            <div id="#acc" class="tab-pane active"> 
 				<div class="col-xs-3">
 				 <ul class="profile-menu-left nav nav-tabs horizontal-tab">
 					<li class="user"><i class="glyphicon glyphicon-user"></i>Xin chào,<br>dendimon    </li>
-					<li ><a data-toggle="tab" href="#profile" onclick="AjaxProfile('<?php echo site_url('customer/profile'); ?>')">Thông tin tài khoản</a></li>
-					<li ><a data-toggle="tab" href="#address-book">Sổ địa chỉ</a></li>
-					<li > <a data-toggle="tab" href="#changepass">Đổi mật khẩu</a></li>
-					<li ><a data-toggle="tab" href="#favousrite-product">Sản phẩm yêu thích</a></li>
-					<li ><a data-toggle="tab" href="#favousrite-shop">Shop yêu thích</a></li>
-					<li ><a data-toggle="tab" href="#complain">Danh sách góp ý</a></li>
-					<li ><a data-toggle="tab" href="#notification">Danh sách thông báo</a></li>
-					<li><a data-toggle="tab" href="#logout">Thoát</a></li>
+					<li ><a data-toggle="tab" href="#profile" onclick="loadAjax('<?php echo site_url('customer/profile'); ?>','profile')" >Thông tin tài khoản</a></li>
+					<li ><a data-toggle="tab" href="#address-book" onclick="loadAjax('<?php echo site_url('customer/address_book'); ?>','address_book')"  >Sổ địa chỉ</a></li>
+					<li ><a data-toggle="tab" href="#changepass" onclick="loadAjax('<?php echo site_url('customer/changepass'); ?>','changepass')">Đổi mật khẩu</a></li>
+					<li ><a data-toggle="tab" href="#favousrite_product" onclick="loadAjax('<?php echo site_url('customer/favousrite_product'); ?>','favousrite_product')">Sản phẩm yêu thích</a></li>
+					<li ><a data-toggle="tab" href="#favousrite_shop" onclick="loadAjax('<?php echo site_url('customer/favousrite_shop'); ?>','favousrite_shop')">Shop yêu thích</a></li>
+					<li ><a data-toggle="tab" href="#complain" onclick="loadAjax('<?php echo site_url('customer/complain'); ?>','complain')">Danh sách góp ý</a></li>
+					<li ><a data-toggle="tab" href="#notification" onclick="loadAjax('<?php echo site_url('customer/notification'); ?>','notification')">Danh sách thông báo</a></li>
+					<li ><a data-toggle="tab" href="#logout">Thoát</a></li>
 				  </ul>
 				</div>
-				<div class="col-xs-9 profile-content">
-				  <div id="profile" class="tab-pane fade in">
-					<?php $this->load->view('customer/profile'); ?>
+				<div class="col-xs-9 profile-content" id="customer">
+				  <div  class="tab-pane active customer_div">
 				  </div>
-				  <div id="changepass" class="tab-pane fade in ">	
-					<?php $this->load->view('customer/changepass'); ?>
+				</div>
+			</div>
+			<div id="#buy" class="tab-pane "> 
+				<div class="col-xs-3">
+				 #BUY
+				</div>
+				<div class="col-xs-9 profile-content" >
+				  <div  class=" customer_div">
+				  #BUY
+				  </div>
+				</div>
+			</div>
+			<div id="#bank" class="tab-pane "> 
+				<div class="col-xs-3">
+				 #BANK
+				</div>
+				<div class="col-xs-9 profile-content" >
+				  <div  class=" customer_div">
+				  #BUY
 				  </div>
 				</div>
 			</div>

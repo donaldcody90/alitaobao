@@ -41,6 +41,7 @@ $config['site'] = array(
 			'static/js/jquery-min.js',
 			'static/js/bootstrap.min.js',
 			'static/js/profile.js',
+			'static/js/slick.min.js',
 		),
 	),
 	// Default stylesheets to embed at page head
@@ -59,9 +60,13 @@ $config['site'] = array(
 			
 			'static/css/site.css',
 			'static/css/sign-up.css',
+			'static/css/category.css',
+			'static/css/shop-info.css',
+			'static/css/shopping-cart.css',
 			
 			'static/css/skin-red.css',
 			'static/css/style.css',
+			'static/css/product_page.css',
 		)
 	),
 	// Multilingual settings (set empty array to disable this)

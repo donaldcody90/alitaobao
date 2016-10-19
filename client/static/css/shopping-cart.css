@@ -197,3 +197,6 @@
 .shopping-total .order-amount ul li.value {
     color: #e74c3c;
 }
+.product-shop-cart h3,h4{
+    display: inline-block;
+    }

@@ -21,12 +21,11 @@ class Customer extends CI_Controller {
 		$data['customer'] = $customer;
 		$data['template'] = 'customer/profile';
 		$content=$this->load->view('layout/ajax',$data,true);
-						//$content=$this->load->view('users/ajax_changepassword',$data,true);
+
 		$res=array('Response'=>"Success","Message"=>$content);
 		echo json_encode($res); 
 	}
 	// Change password
-	
 	
 	public function changepass(){
 		if (is_logged_in()) { 
@@ -59,9 +58,57 @@ class Customer extends CI_Controller {
 		}
 		$data['result']  = $this->customers_model->findCustomer($param_where);
         $data['template'] = 'customer/changepass';
-		$this->load->view('layout/home', $data);
-	}
+		$content=$this->load->view('layout/ajax',$data,true);
 
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
+	// Sổ địa chỉ
+	public function address_book(){
+		$data['template'] = 'customer/address_book';
+		$content=$this->load->view('layout/ajax',$data,true);
+
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
+	// Sản phẩm yêu thích
+	public function favousrite_product(){
+		$data['template'] = 'customer/favousrite_product';
+		$content=$this->load->view('layout/ajax',$data,true);
+
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
+	//Shop yêu thích
+	public function favousrite_shop(){
+		$data['template'] = 'customer/favousrite_shop';
+		$content=$this->load->view('layout/ajax',$data,true);
+
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
+	// Khiếu nại 
+	public function complain(){
+		$data['template'] = 'customer/complain';
+		$content=$this->load->view('layout/ajax',$data,true);
+
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
+	// Thông báo
+	public function notification(){
+		$data['template'] = 'customer/notification';
+		$content=$this->load->view('layout/ajax',$data,true);
+
+		$res=array('Response'=>"Success","Message"=>$content);
+		echo json_encode($res); 
+	}
+	
 	public function logout(){
 		if($this->session->userdata('vkt_clientCustomer')){
 			  $this->session->unset_userdata('vkt_clientCustomer');

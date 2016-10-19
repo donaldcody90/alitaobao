@@ -1532,3 +1532,17 @@ a:hover {
 ul.horizontal-tab li{
 	float: none;
 }
+.line-province .col-md-4 {
+    padding-right: 0px;
+}
+.line-province .col-md-4:nth-child(3) {
+    padding-right: 10px;
+}
+.box-tools{
+    margin-bottom: 10px;
+    text-align: right;
+}
+.change-is-default-address{
+    cursor: pointer;
+    font-size: 14px;
+}
