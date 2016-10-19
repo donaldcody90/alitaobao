@@ -17,7 +17,7 @@
 				<div class="col-xs-3">
 				 <ul class="profile-menu-left nav nav-tabs horizontal-tab">
 					<li class="user"><i class="glyphicon glyphicon-user"></i>Xin chào,<br>dendimon    </li>
-					<li ><a data-toggle="tab" href="#profile" onclick="loadAjax('<?php echo site_url('customer/profile'); ?>','profile')" >Thông tin tài khoản</a></li>
+					<li class="active"><a data-toggle="tab" href="#profile" onclick="loadAjax('<?php echo site_url('customer/profile'); ?>','profile')" >Thông tin tài khoản</a></li>
 					<li ><a data-toggle="tab" href="#address-book" onclick="loadAjax('<?php echo site_url('customer/address_book'); ?>','address_book')"  >Sổ địa chỉ</a></li>
 					<li ><a data-toggle="tab" href="#changepass" onclick="loadAjax('<?php echo site_url('customer/changepass'); ?>','changepass')">Đổi mật khẩu</a></li>
 					<li ><a data-toggle="tab" href="#favousrite_product" onclick="loadAjax('<?php echo site_url('customer/favousrite_product'); ?>','favousrite_product')">Sản phẩm yêu thích</a></li>
@@ -28,27 +28,7 @@
 				  </ul>
 				</div>
 				<div class="col-xs-9 profile-content" id="customer">
-				  <div  class="tab-pane active customer_div">
-				  </div>
-				</div>
-			</div>
-			<div id="#buy" class="tab-pane "> 
-				<div class="col-xs-3">
-				 #BUY
-				</div>
-				<div class="col-xs-9 profile-content" >
-				  <div  class=" customer_div">
-				  #BUY
-				  </div>
-				</div>
-			</div>
-			<div id="#bank" class="tab-pane "> 
-				<div class="col-xs-3">
-				 #BANK
-				</div>
-				<div class="col-xs-9 profile-content" >
-				  <div  class=" customer_div">
-				  #BUY
+				  <div id="profile"  class="tab-pane active customer_div">
 				  </div>
 				</div>
 			</div>

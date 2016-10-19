@@ -17,12 +17,14 @@ class Cart extends CI_Controller {
 	
 	// Detail Order
 	public function addToCart(){
-		$data = array(
+		$array_product = array(
 			'id' => $this->input->post('pid');
 			'pname' => $this->input->post('pname');
 			'pimage' => $this->input->post('pimage');
 			'plink' => $this->input->post('plink');
 		);
+		$current_customer = vst_getCurrentCustomer();
+		$array_customer = ;
 		$data['template'] = 'cart/cart';
 		$this->load->view('layout/home', $data);
 	}

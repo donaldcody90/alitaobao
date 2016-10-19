@@ -17,7 +17,7 @@ class Auth extends CI_Controller {
 	public function login()
 	{
 		if(is_logged_in()){
-			redirect(site_url('customer/profile'));
+			redirect(site_url('customer'));
 		}else{
 		
 		if($this->input->post('login')){
@@ -31,7 +31,7 @@ class Auth extends CI_Controller {
 			if( count($result)>0 ){
 				unset($result['password']);
 				$this->session->set_userdata('vkt_clientCustomer',$result);
-				redirect(site_url('customer/profile'));
+				redirect(site_url('customer'));
 				die();
 			}else{
 				message_flash('Tên đăng nhập hoặc mật khẩu không đúng. Xin vui lòng nhập lại','error');

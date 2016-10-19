@@ -258,8 +258,9 @@
                 <input type="hidden" name="pname" value="<?php echo $product['pname']; ?>">
                 <input type="hidden" name="pimage" value="<?php echo $product['pimage']; ?>">
                 <input type="hidden" name="plink" value="<?php echo $product['plink']; ?>">
+				<input type="submit" class="hz-btn hz-btn-red hz-btn-block hz-btn-uppercase hz-btn-bold btn-add-cart" value="Thêm vào giỏ hàng" />                            
               </form>
-              <input type="submit" class="hz-btn hz-btn-red hz-btn-block hz-btn-uppercase hz-btn-bold btn-add-cart" value="Thêm vào giỏ hàng" />                            
+              
             </div>
           </div>
         </div>
@@ -330,7 +331,7 @@
                   <a target="_blank" href=" " title=" ">
                   <span class="responsive-img">
                   <img class="media-object lazy"
-                    src="static/static/images/16a25023a0f0238ea1d5d376ea45fa1c.220x220.jpg"
+                    src="static/images/16a25023a0f0238ea1d5d376ea45fa1c.220x220.jpg"
                     alt=Áo nỉ nữ dài tay in hình chàng trai/>
                   </span>
                   </a>
@@ -422,9 +423,9 @@
               <span>Danh hiệu:</span>
               <div class="star-rating">
                 <div class="hz-star-rating">
-                  <img src="static/static/images/icon_shop.png">
-                  <img src="static/static/images/icon_shop.png">
-                  <img src="static/static/images/icon_shop.png">
+                  <img src="static/images/icon_shop.png">
+                  <img src="static/images/icon_shop.png">
+                  <img src="static/images/icon_shop.png">
                 </div>
               </div>
             </div>
@@ -525,7 +526,7 @@
               <a target="_blank" href="#" title="Hạt giống cây trồng - hoa hồng tạo không gian sôi động">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="static/static/images/c0e47da0c17534f6474aedc216187427.220x220.jpg"
+                src="static/images/c0e47da0c17534f6474aedc216187427.220x220.jpg"
                 alt=""/>
               </span>
               </a>
@@ -539,7 +540,7 @@
               <a target="_blank" href="#" title="#">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="static/static/images/c4693eb0ecad75958cafbfedfd9c2fcc.220x220.jpg"
+                src="static/images/c4693eb0ecad75958cafbfedfd9c2fcc.220x220.jpg"
                 alt=""/>
               </span>
               </a>
