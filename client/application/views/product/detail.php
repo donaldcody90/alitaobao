@@ -6,7 +6,7 @@
         <div class="product-detail-gallery">
           <div class="product-images">
             <div class="image-featured responsive-img">
-              <img src="<?php echo $product['pimage']; ?>" alt="Áo khoác caridigan nữ dáng ngắn"> 
+              <img src="<?php echo $product['image']; ?>" alt="Áo khoác caridigan nữ dáng ngắn"> 
             </div>
             <div class="image-slide hz-slider">
                     <div class="item item-selected">
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="product-detail-info">
-          <h1 class="product-title tsf">Áo khoác caridigan nữ dáng ngắn</h1>
+          <h1 class="product-title tsf"><?php echo $product['name']?></h1>
           <div class="table-info">
             <table class="table table-responsive">
               <thead>
@@ -45,7 +45,7 @@
                 <tr>
                   <td>1</td>
                   <td class="text-right">
-                    <span>120.000 đ</span> / chiếc                                            
+                    <span><?php echo $product['price']; ?> đ</span> / chiếc                                            
                   </td>
                 </tr>
               </tbody>
@@ -207,7 +207,7 @@
                     <td>
                       <p class="tsf">Xanh lam</p>
                     </td>
-                    <td class="item-price text-right">120.000</td>
+                    <td class="item-price text-right"><?php echo $product['price']; ?></td>
                     <td class="text-right item-quantity">30</td>
                     <td class="text-center"><span class="ui-spinner ui-widget ui-widget-content ui-corner-all" style="height: 28px;">
                       <input type="text" class="num-range ui-spinner-input txtQuantity" value="0" >
@@ -222,7 +222,7 @@
                     <td>
                       <p class="tsf">Xanh lá</p>
                     </td>
-                    <td class="item-price text-right">120.000</td>
+                    <td class="item-price text-right"><?php echo $product['price']; ?></td>
                     <td class="text-right item-quantity">30</td>
                     <td class="text-center">
                       <span class="ui-spinner ui-widget ui-widget-content ui-corner-all" style="height: 28px;">
@@ -254,10 +254,11 @@
                 </div>
               </div>
               <form id="frm-add-cart" action="<?php echo site_url('cart/addToCart');?>" method="post">
-                <input type="hidden" name="id" value="<?php echo $product['pid']; ?>">
-                <input type="hidden" name="pname" value="<?php echo $product['pname']; ?>">
-                <input type="hidden" name="pimage" value="<?php echo $product['pimage']; ?>">
-                <input type="hidden" name="plink" value="<?php echo $product['plink']; ?>">
+                <input type="hidden" name="pid" value="<?php echo $product['pid']; ?>">
+                <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
+                <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
+                <input type="hidden" name="link" value="<?php echo $product['link']; ?>">
+                <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
 				<input type="submit" class="hz-btn hz-btn-red hz-btn-block hz-btn-uppercase hz-btn-bold btn-add-cart" value="Thêm vào giỏ hàng" />                            
               </form>
               
@@ -305,7 +306,7 @@
                   <a target="_blank" href="#" title=" ">
                   <span class="responsive-img">
                   <img class="media-object lazy"
-                    src="<?php echo $product['pimage']; ?>"
+                    src="<?php echo $product['image']; ?>"
                     alt="Áo khoác gile nữ 1 cúc thời trang" />
                   </span>
                   </a>
@@ -318,7 +319,7 @@
                   <a target="_blank" href="#" title="#">
                   <span class="responsive-img">
                   <img class="media-object lazy"
-                    src="<?php echo $product['pimage']; ?>"
+                    src="<?php echo $product['image']; ?>"
                     alt="Áo gile nữ không cúc túi chéo"/>
                   </span>
                   </a>
@@ -398,7 +399,7 @@
                 </ul>
                 <div class="product-content">
                   <div style="text-align:center;">
-					<img src="<?php echo $product['pimage']; ?>" alt="46884be5471326a10058d31a3acc784b.jpg" />
+					<img src="<?php echo $product['image']; ?>" alt="46884be5471326a10058d31a3acc784b.jpg" />
 				  </div>                              
                 </div>
               </div>
@@ -461,7 +462,7 @@
               <a target="_blank" href="#" title="">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="<?php echo $product['pimage']; ?>"
+                src="<?php echo $product['image']; ?>"
                 alt=Áo thun nam tay ngắn thời trang, họa tiết nổi bật/>
               </span>
               </a>
@@ -475,7 +476,7 @@
               <a target="_blank" href=" " title=" ">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="<?php echo $product['pimage']; ?>"
+                src="<?php echo $product['image']; ?>"
                 alt=Đầm nữ xẻ tà phối cổ bẻ DU11763/>
               </span>
               </a>
@@ -489,7 +490,7 @@
               <a target="_blank" href="#" title=" ">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="<?php echo $product['pimage']; ?>"
+                src="<?php echo $product['image']; ?>"
                 alt=""/>
               </span>
               </a>
@@ -503,7 +504,7 @@
               <a target="_blank" href="#" title="#">
               <span class="responsive-img">
               <img class="media-object lazy"
-                src="<?php echo $product['pimage']; ?>"
+                src="<?php echo $product['image']; ?>"
                 alt=""/>
               </span>
               </a>

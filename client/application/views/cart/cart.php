@@ -1,3 +1,4 @@
+
 <div class="container p-full">
   <div class="shopping-cart-index">
     <div class="row">
@@ -12,7 +13,7 @@
         </div>
         <div class="boder-shop-cart">
           <div class="title-shop">
-            <div class="bg-title">Được bán bởi: <a href="http://nhungquynhshop.luuthong.vn" target="_blank">Chuyên giày VNXK - Quảng Châu</a><a
+            <div class="bg-title">Được bán bởi: <a href="#" target="_blank">Shop name</a><a
               name="s1001907"></a></div>
             <div class="bg-dv">
               Dịch vụ của shop:
@@ -24,29 +25,36 @@
               </div>
             </div>
           </div>
+		  <form id="frm-checkout" action="<?php echo site_url('cart/checkout');?>" method="post">
           <table class="table table-shopping-cart" id="item-shop-cart-1001907" data-shop-id="1001907">
             <thead>
               <tr class="bg-warning">
+                <th><input type="checkbox"  value="all"></th>
                 <th>Thông tin sản phẩm</th>
                 <th style="width: 22%;" class="">Giá bán</th>
                 <th style="width: 20%;" class="">Số lượng</th>
                 <th style="width: 10%;" class=""></th>
               </tr>
             </thead>
+			
             <tbody>
-              <tr class="sku-items" id="item-sku-cart-1224995" data-config="{&quot;pid&quot;:1055999,&quot;skuid&quot;:1224995,&quot;ws_rule_number&quot;:1,&quot;quantity_max&quot;:50}">
+              <tr class="sku-items">
+				<td>
+					<input type="checkbox" name="checkbox[]" value="<?php echo $array_product['id'];?>">
+				</td>
                 <td>
                   <div class="media">
                     <div class="media-left">
                       <div class="cart-product-img">
-                        <a href="//luuthong.vn/giay-da-nu-dep-i1055999" class="responsive-img"
+                        <a href="<?php echo $array_product['link']; ?>" class="responsive-img"
                           target="_blank">
-                        <img src="http://luuthong.vn/uploads/media/20160927/1ff7f7f7b9617ca83ca31ec726b8a459.100x100.jpg" alt="">                                    </a>
+                        <img src="<?php echo $array_product['image']; ?>" width="100" height="100" alt="">                                    </a>
                       </div>
                     </div>
                     <div class="media-body">
                       <strong class="media-heading clearfix">
-                      <a href="//luuthong.vn/giay-da-nu-dep-i1055999" target="_blank">Giày da nữ đẹp</a>                                </strong>
+                      <a href="<?php echo $array_product['link']; ?>" target="_blank"><?php echo $array_product['name']; ?></a>
+					  </strong>
                       <div class="p-info clearfix">
                         <div class="property-list">
                           <div class="f">
@@ -63,74 +71,7 @@
                       </div>
                     </div>
                   </div>
-                </td>
-                <td class="sku-price">
-                  <div class="price-range p-info price-range-select-1055999">
-                    <div
-                      class="f "
-                      data-price="189000">
-                      <span
-                        class="pfl">1 - 4:</span>
-                      <span class="pfv">
-                      189.000đ
-                      </span>
-                    </div>
-                    <div
-                      class="f "
-                      data-price="150000">
-                      <span
-                        class="pfl">&ge; 5:</span>
-                      <span class="pfv">
-                      150.000đ
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td class="">
-                  <span class="ui-spinner ui-widget ui-widget-content ui-corner-all"
-                    style="height: 28px;">
-                  <input type="text" class="num-range ui-spinner-input txtQuantity"
-                    value="1" data-sku-id="1224995"
-                    aria-valuemin="1" aria-valuenow="1"
-                    autocomplete="off" role="spinbutton" data-valuemax="5" aria-valuemax="5">
-                  <a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only btnIncrease"
-                    tabindex="-1" role="button">
-                  <span class="ui-button-text"><span
-                    class="ui-icon ui-icon-triangle-1-n">+</span></span></a>
-                  <a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only btnDecrease"
-                    tabindex="-1" role="button">
-                  <span class="ui-button-text"><span
-                    class="ui-icon ui-icon-triangle-1-s">-</span></span></a></span>
-                </td>
-                <td class="text-right">
-                  <a class="cart-remove btn-remove" href="javascript:void(0)" data-id="1224995" data-level="sku">Xóa sản phẩm</a>                    
-                </td>
-              </tr>
-              <tr class="sku-items" id="item-sku-cart-1228391" data-config="{&quot;pid&quot;:1056786,&quot;skuid&quot;:1228391,&quot;ws_rule_number&quot;:1,&quot;quantity_max&quot;:50}">
-                <td>
-                  <div class="media">
-                    <div class="media-left">
-                      <div class="cart-product-img">
-                        <a href="//luuthong.vn/boots-da-nu-hien-dai-i1056786" class="responsive-img"
-                          target="_blank">
-                        <img src="http://luuthong.vn/uploads/media/20160929/e9f65f6caaf518f87a68e06763c03535.100x100.jpg" alt="">                                    </a>
-                      </div>
-                    </div>
-                    <div class="media-body">
-                      <strong class="media-heading clearfix">
-                      <a href="//luuthong.vn/boots-da-nu-hien-dai-i1056786" target="_blank">boots da nữ hiện đại</a>                                </strong>
-                      <div class="p-info clearfix">
-                        <div class="property-list">
-                          <div class="f">
-                            <span class="pfl">size:</span>
-                            <strong
-                              class="pfv">35</strong>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="losers">
+				  <div class="losers">
                     <input type="text" class="form-losers" placeholder="Nhập mã giảm giá">
                     <button type="button" class="btn btn-danger btn-losers">Xác nhận</button>
                     <div class="text-losers">
@@ -140,52 +81,31 @@
                   </div>
                 </td>
                 <td class="sku-price">
-                  <div class="price-range p-info price-range-select-1056786">
-                    <div
-                      class="f "
-                      data-price="225000">
-                      <span
-                        class="pfl">1 - 4                                            :</span>
+                  <div class="price-range p-info price-range-select-1055999">
+                    <div class="f"  data-price="189000">
                       <span class="pfv">
-                      225.000đ
-                      </span>
-                    </div>
-                    <div
-                      class="f "
-                      data-price="179000">
-                      <span
-                        class="pfl">&ge; 5                                            :</span>
-                      <span class="pfv">
-                      179.000đ
+						<?php echo $array_product['price']; ?>
                       </span>
                     </div>
                   </div>
                 </td>
-                <td class="">
-                  <span class="ui-spinner ui-widget ui-widget-content ui-corner-all"
-                    style="height: 28px;">
-                  <input type="text" class="num-range ui-spinner-input txtQuantity"
-                    value="1" data-sku-id="1228391"
-                    aria-valuemin="1" aria-valuenow="1"
-                    autocomplete="off" role="spinbutton" data-valuemax="5" aria-valuemax="5">
-                  <a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only btnIncrease"
-                    tabindex="-1" role="button">
-                  <span class="ui-button-text"><span
-                    class="ui-icon ui-icon-triangle-1-n">+</span></span></a>
-                  <a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only btnDecrease"
-                    tabindex="-1" role="button">
-                  <span class="ui-button-text"><span
-                    class="ui-icon ui-icon-triangle-1-s">-</span></span></a></span>
+                <td >
+                  <input type="number" style="width: 50px;" name="quantity" min="1" value="1">
                 </td>
                 <td class="text-right">
-                  <a class="cart-remove btn-remove" href="javascript:void(0)" data-id="1228391" data-level="sku">Xóa sản phẩm</a>                    
+                  <a class="cart-remove btn-remove" href="#" data-id="1224995" data-level="sku">Xóa sản phẩm</a>                    
                 </td>
               </tr>
+			 
             </tbody>
+			</form>
             <tfoot>
               <tr>
                 <td colspan="2">
-                  <a class="cart-remove btn-remove" href="javascript:void(0);" data-id="1001907" data-level="shop"><i class="glyphicon glyphicon-remove"></i> Xóa tất cả</a>                <a class="btn-summary" href="http://nhungquynhshop.luuthong.vn" target="_blank"><i class="glyphicon glyphicon-folder-close"></i> Chọn thêm sản phẩm khác</a>                                
+                  <a class="cart-remove btn-remove" href="#" data-id="1001907" data-level="shop">
+				  <i class="glyphicon glyphicon-remove"></i> Xóa tất cả</a>                
+				  <a class="btn-summary" href="#" target="_blank">
+				  <i class="glyphicon glyphicon-folder-close"></i> Chọn thêm sản phẩm khác</a>                                
                   <div class="protection pull-right">
                     <div class="hz-icon icon-protection protection-img">
                     </div>
@@ -212,13 +132,15 @@
                       </div>
                     </div>
                     <div class="shopping-button-right">
-                      <button type="button" class="btn-update-cart btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Cập nhật giỏ hàng</button>                                                    <a class="btn btn-danger btn-update" href="/shopping-cart/checkout?id=1001907" data-shop="1001907"><i class="glyphicon glyphicon-shopping-cart"></i> Đặt hàng</a>                                            
+                      <button type="button" class="btn-update-cart btn btn-primary"> Cập nhật giỏ hàng</button>                                                    
+					  <input type="submit" name="submit" class="btn btn-danger btn-update" value="Đặt hàng">                                          
                     </div>
                   </div>
                 </td>
               </tr>
             </tfoot>
           </table>
+		  </form>
         </div>
       </div>
     </div>

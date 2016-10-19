@@ -46,9 +46,9 @@ if ( ! function_exists('vst_textDate'))
 }
 
 
-if ( ! function_exists('vst_getCurrentUser'))
+if ( ! function_exists('vst_getCurrentCustomer'))
 {
-	function vst_getCurrentUser() {
+	function vst_getCurrentCustomer() {
 	    $CI =& get_instance();
 	    $user = $CI->session->userdata('vkt_clientCustomer');
 		return $user;

@@ -29,7 +29,7 @@ class Customer extends CI_Controller {
 	
 	public function changepass(){
 		if (is_logged_in()) { 
-			$customer = vst_getCurrentUser();
+			$customer = vst_getCurrentCustomer();
 			$cusername  = $customer['username'];
 		}
 		$param_where = array('username'=>$cusername);
