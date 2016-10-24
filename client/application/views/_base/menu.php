@@ -27,7 +27,7 @@
               <a href="#" title="Trợ giúp"><i class="glyphicon glyphicon-question-sign"></i> Trợ giúp</a>                        
             </li>
             <li>
-              <a href="#" title="Trợ giúp"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Giỏ hàng
+              <a href="<?php echo site_url('cart');?>" title="Trợ giúp"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Giỏ hàng
               <strong class="count">(<b id="booking-quantity">0</b>)</strong></a>                        
             </li>
           </ul>

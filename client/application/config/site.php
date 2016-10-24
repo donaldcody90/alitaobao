@@ -63,6 +63,8 @@ $config['site'] = array(
 			'static/css/category.css',
 			'static/css/shop-info.css',
 			'static/css/shopping-cart.css',
+			'static/css/my-account.css',
+			'static/css/product.css',
 			
 			'static/css/skin-red.css',
 			'static/css/style.css',

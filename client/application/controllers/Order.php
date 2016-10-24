@@ -11,7 +11,7 @@ class Order extends CI_Controller {
 
 	public function index(){
 		$this->load->view('layout/home', $data);
-
+		
 	}
 	
 	// Detail Order
@@ -20,5 +20,14 @@ class Order extends CI_Controller {
 		$this->load->view('layout/home', $data);
 	}
 	
+	// Detail Order
+	public function lists(){
+		$currentCustomer =  vst_getCurrentCustomer();
+		
+		$list_order = $this->order_model->listOrder($currentCustomer['cid']);
+		var_dump($list_order);
+		$data['template'] = 'order/list';
+		$this->load->view('layout/home', $data);
+	}
 	
 }

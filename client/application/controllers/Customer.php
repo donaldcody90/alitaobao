@@ -18,6 +18,7 @@ class Customer extends CI_Controller {
 	// Profile Customer
 	public function profile(){
 		$customer = $this->session->userdata('vkt_clientCustomer');
+		
 		$data['customer'] = $customer;
 		$data['template'] = 'customer/profile';
 		$content=$this->load->view('layout/ajax',$data,true);

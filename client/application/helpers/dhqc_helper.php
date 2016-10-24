@@ -17,6 +17,27 @@ if ( ! function_exists('is_logged_in'))
 	}
 }
 
+
+if ( ! function_exists('vkt_getShop'))
+{
+	function vkt_getShop($shop_id) {
+	    $CI =& get_instance();
+		$shop_table="vt_shop";
+		$CI->db->select("*");
+		$CI->db->from($shop_table);
+		$CI->db->where(array('id'=>$shop_id));
+		$query=$CI->db->get();
+		$row=$query->row_array();
+		if($row){
+			return $row;
+		}else{
+			return false;
+		}
+		
+	}
+}
+
+
 if ( ! function_exists('vkt_checkAuth'))
 {
 	function vkt_checkAuth() {
@@ -45,13 +66,25 @@ if ( ! function_exists('vst_textDate'))
 	}
 }
 
+if ( ! function_exists('vst_getSeller'))
+{
+	function vst_getSeller($sid) {
+		$CI =& get_instance();
+		$seller_table="vt_seller";
+		$CI->db->select("*");
+		$CI->db->from($seller_table);
+		$CI->db->where(array('sid'=>$sid));
+		$query=$CI->db->get();
+		$row=$query->row_array();
+	}
+}
 
 if ( ! function_exists('vst_getCurrentCustomer'))
 {
 	function vst_getCurrentCustomer() {
 	    $CI =& get_instance();
-	    $user = $CI->session->userdata('vkt_clientCustomer');
-		return $user;
+	    $customer = $CI->session->userdata('vkt_clientCustomer');
+		return $customer;
 	}
 }
 if ( ! function_exists('vst_FormatDate'))
@@ -271,22 +304,12 @@ if(!function_exists('vst_buildFilter')){
 		}
 	}
 }
-if(!function_exists('vst_convertCartString')){
-function vst_convertCartString($string)
-	{
-		$search = array("\'",'\"',"'",'"');
-		$replace = array("?","?","?",'?');
-
-		return str_replace($search, $replace, $string);
-
-	}
-}
 
 if(!function_exists('get_setting_meta')){
 function get_setting_meta($meta_key,$return_row=false)
 	{
 		$CI =& get_instance();
-		$setting_table="settings";
+		$setting_table="vt_setting";
 		$CI->db->select("*");
 		$CI->db->from($setting_table);
 		$CI->db->where(array('meta_key'=>$meta_key));
@@ -302,141 +325,8 @@ function get_setting_meta($meta_key,$return_row=false)
 	}
 }
 
-if(!function_exists('get_support_user')){
-function get_support_user($cid)
-	{
-		$CI =& get_instance();
-		$users_table="users";
-		$custommers_table="customers";
-		$CI->db->select($users_table.'.fullname ,'.$users_table.'.phone');
-		$CI->db->from($users_table);
-		$CI->db->join ($custommers_table, $custommers_table.'.uid = '.$users_table.'.uid');
-		$CI->db->where(array(
-						$custommers_table.'.cid'=>$cid));
-		$query=$CI->db->get();
-		$row=$query->row_array();
-		return $row;
-	}
-}
-
-if ( ! function_exists('getStatusOrder'))
-{
-	function getStatusOrder($status)
-	{
-		$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
-		switch($status)
-		{
-			case -1:
-				$statusText="<span class='dahuy'>Đã hủy</span>";
-				break;
-			case 0:
-				$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
-				break;
-			case 1:
-				$statusText="<span class='daduyet'>Đã duyệt</span>";
-				break;
-			case 2:
-				$statusText="<span class='dathanhtoan'>Đã thanh toán - chờ mua hàng</span>";
-				break;
-			case 3:
-				$statusText="<span class='damuahang'>Đã mua hàng</span>";
-				break;
-			case 4:
-				$statusText="<span class='hangdave'>Hàng đã về - chờ giao hàng</span>";
-				break;
-			case 5:
-				$statusText="<span class='daketthuc'>Đã kết thúc</span>";
-				break;
-			default:
-				$statusText="<span class='chuaduyet'>Chưa duyệt</span>";
-		}
-		return $statusText;
-	}
-}
-
-if ( ! function_exists('get_is_complain'))
-{
-	function get_is_complain($is_complain)
-	{
-		switch($is_complain)
-		{
-			case 0:
-				$status="<span class='black'>Không có khiếu nại</span>";
-				break;
-			case 1:
-				$status="<span class=''>Đang khiếu nại</span>";
-				break;
-			case 2:
-				$status="<span class='blue'>Khiếu nại thành công</span>";
-				break;
-			case 3:
-				$status="<span class='red'>Khiếu nại thất bại</span>";
-				break;
-			case 4:
-				$status="<span class='black'>Khiếu nại đã hủy</span>";
-				break;
-		}
-		return $status;
-	}
-}
-
-// Hàm cho phần lịch sử giao dịch
-if ( ! function_exists('get_method_Transaction'))
-{
-	function get_method_Transaction($value)
-	{
-		switch($value)
-		{
-			case 0:
-				$value="Tiền mặt";
-				break;
-			case 1:
-				$value="Chuyển khoản";
-				break;	
-		}
-		return $value;
-	}
-}
 
 
-if ( ! function_exists('get_type_Transaction'))
-{
-	function get_type_Transaction($value)
-	{
-		switch($value)
-		{
-			
-			case 1:
-				$value="Thanh toán đơn hàng";
-				break;
-			case 2:
-				$value="Giảm trừ";
-				break;	
-		}
-		return $value;
-	}
-}
-if ( ! function_exists('get_status_Transaction'))
-{
-	function get_status_Transaction($value)
-	{
-		switch($value)
-		{
-			
-			case -1:
-				$value="Đã hủy";
-				break;
-			case 0:
-				$value="Chưa duyệt";
-				break;
-			case 1:
-				$value="Đã duyệt";
-				break;
-				
-		}
-		return $value;
-	}
-}
 if ( ! function_exists('get_cart_number_items'))
 {
 	function get_cart_number_items($vkt_usercart)
@@ -465,152 +355,3 @@ if ( ! function_exists('getCartData'))
 	}
 }
 
-if ( ! function_exists('get_user_finance')){
-	function get_user_finance(){
-		$currentCustomer=vst_getCurrentUser();
-		$cid  = $currentCustomer['cid']; 
-		$CI = get_instance();
-		$CI->load->model('order_model');
-		$CI->load->model('transaction_model');
-		$CI->load->model('ship_model');
-		
-		
-		$user_credits=array(
-			'tongthanhtoan'=>0,
-			'tongthanhtoandonhang'=>0,
-			'tongthanhtoanvandon'=>0,
-			'tonggiamtru'=>0,
-			
-			'tongtienhangchuave'=>0,
-			'tongtienhang'=>0,
-			'tongtienvandon'=>0,
-			
-			'notienvandon'=>0,
-			'notienhang'=>0,
-			
-			'tongtienno'=>0,
-		);
-		$user_transactions=array();
-		
-		/*  Lay don hang */
-		$info_Order = $CI->order_model->findOrder($params_where = array( 'cid'=>$cid ,'status >='=>2),$isList=true );
-		if( $info_Order ){
-		  foreach ($info_Order as $key => $value) {
-			 $total_price_by_order = $CI->order_model->getDetailOrder($value['invoiceid']);
-			 
-			 $user_transactions[strtotime( $value['create_date'] ).time().$key]=array(
-																				'id'=>$value['id'],
-																				'invoiceid'=>$value['invoiceid'],
-																				'create_date'=>$value['create_date'],
-																				'total_price'=>$total_price_by_order['order_summary']['total_price'] * $total_price_by_order['currency_rate'],
-																				'status'=>$value['status'],
-																				'type'=>3,
-																				);
-		  }
-		}
-		
-		/* SHIP */
-		$info_Invoice_Ship = $CI->ship_model->findInvoiceShip($params_where=array( 'cid'=>$cid ,'status >='=>1),$isList=true);
-		if( $info_Invoice_Ship ){
-		  foreach ($info_Invoice_Ship as $key => $value) {			 
-			 $user_transactions[strtotime( $value['create_date'] ).time().$key]=array(
-																				'id'=>$value['id'],
-																				'invoiceid'=>$value['invoiceid'],
-																				'create_date'=>$value['create_date'],
-																				'total_price'=>$value['total_price'],
-																				'status'=>$value['status'],
-																				'type'=>4,
-																				);
-		  }
-		}
-		/* thanh toan */
-		$info_Transaction = $CI->transaction_model->findTransaction($params_where=array( 'cid'=>$cid ,'status >='=>1 ) ,$isList=true);
-		if( $info_Transaction ){
-		  foreach ($info_Transaction as $key => $value) {
-			 $user_transactions[strtotime( $value['create_date'] ).time().$key]=array(
-																				'id'=>$value['id'],
-																				'create_date'=>$value['create_date'],
-																				'total_price'=>$value['amount'],
-																				'status'=>$value['status'],
-																				'type'=>$value['type'],
-																				'ref_type'=>$value['ref_type'],
-																				);
-		  }
-		}
-		/* sap xep */
-		ksort($user_transactions,SORT_DESC);
-
-		/*
-			1-	Thanh toán đơn hàng 
-			2-	Giảm trừ
-			3-	Nợ đơn hàng
-			4-	Nợ vận đơn
-			$user_credits=array(
-				'tongthanhtoandonhang'=>0,
-				'tongthanhtoanvandon'=>0,
-				'tonggiamtru'=>0,
-				
-				'tongtienhangchuave'=>0,
-				'tongtienhang'=>0,
-				'tongtienvandon'=>0,
-				'notienvandon'=>0,
-				'notienhang'=>0,
-				'tongtienno'=>0,
-			);
-		*/
-	
-		if($user_transactions)
-		{
-			foreach($user_transactions as $key=>$value)
-			{
-				/* Đã thanh tóan */
-				if($value['type'] == 1)
-				{
-					
-					
-					if($value['ref_type'] == 1){
-						$user_credits['tongthanhtoandonhang'] +=$value['total_price'];
-					}
-					if($value['ref_type'] == 2){
-						
-						$user_credits['tongthanhtoanvandon'] +=$value['total_price'];
-					}
-				}
-				/* giảm trừ */
-				if($value['type'] == 2)
-				{
-					$user_credits['tonggiamtru'] +=$value['total_price'];
-					
-				}
-				
-				/* Đơn hàng */
-				if($value['type'] == 3)
-				{
-					$user_credits['tongtienhang'] +=$value['total_price'];
-					
-					/* tiền hàng chưa về */
-					if($value['status'] == 2 || $value['status'] == 3)
-					{
-					  $user_credits['tongtienhangchuave'] +=$value['total_price'];
-					}
-				}
-				
-				/* vận đơn */
-				if($value['type'] == 4)
-				{
-					$user_credits['tongtienvandon'] +=$value['total_price'];
-				}
-			}
-		}
-		
-		/* tổng tiền hàng phải giảm đi tổng giảm trừ */
-		$user_credits['tongtienhang']= $user_credits['tongtienhang'] - $user_credits['tonggiamtru'];
-		/* --------- */
-		$user_credits['tongthanhtoan']= $user_credits['tongthanhtoandonhang'] + $user_credits['tongthanhtoanvandon'];
-		$user_credits['notienhang']= $user_credits['tongtienhang'] - $user_credits['tongthanhtoandonhang'];
-		$user_credits['notienvandon']= $user_credits['tongtienvandon'] - $user_credits['tongthanhtoanvandon'];
-		$user_credits['tongtienno']= $user_credits['notienhang'] + $user_credits['notienvandon'];
-		return $user_credits;
-		
-	}
-}

@@ -243,7 +243,7 @@
                   <p>
                     <span class="s-name">Số lượng:</span>
                     <span class="s-quantity">
-                    <b class="quantity txtTotalQuantity">0</b> chiếc                                            </span>
+                    <b class="quantity txtTotalQuantity">0</b> chiếc</span>
                   </p>
                   <p>
                     <span class="s-name">Tổng tiền:</span>
@@ -259,6 +259,8 @@
                 <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
                 <input type="hidden" name="link" value="<?php echo $product['link']; ?>">
                 <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
+                <input type="hidden" name="sid" value="<?php echo $product['sid']; ?>">
+                <input type="hidden" name="qty" value="1">
 				<input type="submit" class="hz-btn hz-btn-red hz-btn-block hz-btn-uppercase hz-btn-bold btn-add-cart" value="Thêm vào giỏ hàng" />                            
               </form>
               

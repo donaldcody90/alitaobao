@@ -1,4 +1,3 @@
-
 <div class="container p-full">
   <div class="shopping-cart-index">
     <div class="row">
@@ -25,6 +24,7 @@
               </div>
             </div>
           </div>
+		  <?php $this->load->view('_base/message'); ?>
 		  <form id="frm-checkout" action="<?php echo site_url('cart/checkout');?>" method="post">
           <table class="table table-shopping-cart" id="item-shop-cart-1001907" data-shop-id="1001907">
             <thead>
@@ -38,22 +38,32 @@
             </thead>
 			
             <tbody>
+			<?php foreach($array_product as $key=>$value){ ?>
+			  <tr class="tr_seller">
+				<td colspan="5">
+					<span>Người Bán:</span>
+					<?php echo $value['sid']; ?>
+				</td>
+			  </tr>
+			  <?php foreach($value['item'] as $k=>$v){?>	
+			  
               <tr class="sku-items">
 				<td>
-					<input type="checkbox" name="checkbox[]" value="<?php echo $array_product['id'];?>">
+					<input type="checkbox" name="checkbox[]" value="<?php echo $value['sid'].'{:::}'.$v['id'];?>">
 				</td>
                 <td>
                   <div class="media">
                     <div class="media-left">
                       <div class="cart-product-img">
-                        <a href="<?php echo $array_product['link']; ?>" class="responsive-img"
+                        <a href="<?php echo $v['link']; ?>" class="responsive-img"
                           target="_blank">
-                        <img src="<?php echo $array_product['image']; ?>" width="100" height="100" alt="">                                    </a>
+                        <img src="<?php echo $v['image']; ?>" width="100" height="100" alt="">
+						</a>
                       </div>
                     </div>
                     <div class="media-body">
                       <strong class="media-heading clearfix">
-                      <a href="<?php echo $array_product['link']; ?>" target="_blank"><?php echo $array_product['name']; ?></a>
+                      <a href="<?php echo $v['link']; ?>" target="_blank"><?php echo $v['name']; ?></a>
 					  </strong>
                       <div class="p-info clearfix">
                         <div class="property-list">
@@ -84,19 +94,20 @@
                   <div class="price-range p-info price-range-select-1055999">
                     <div class="f"  data-price="189000">
                       <span class="pfv">
-						<?php echo $array_product['price']; ?>
+						<?php echo $v['price']; ?>
                       </span>
                     </div>
                   </div>
                 </td>
                 <td >
-                  <input type="number" style="width: 50px;" name="quantity" min="1" value="1">
+                  <input type="number" style="width: 50px;" name="quantity" min="1" value="<?php echo $v['qty']?>">
                 </td>
                 <td class="text-right">
                   <a class="cart-remove btn-remove" href="#" data-id="1224995" data-level="sku">Xóa sản phẩm</a>                    
                 </td>
               </tr>
-			 
+			  <?php } ?>
+			<?php } ?>
             </tbody>
 			</form>
             <tfoot>
@@ -133,7 +144,7 @@
                     </div>
                     <div class="shopping-button-right">
                       <button type="button" class="btn-update-cart btn btn-primary"> Cập nhật giỏ hàng</button>                                                    
-					  <input type="submit" name="submit" class="btn btn-danger btn-update" value="Đặt hàng">                                          
+					  <input type="submit" name="confirm_order" class="btn btn-danger btn-update" value="Đặt hàng">                                          
                     </div>
                   </div>
                 </td>
